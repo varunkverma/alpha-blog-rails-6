@@ -1,0 +1,11 @@
+Generate migration file:
+    rails generate migration <name_for_migration_file>
+
+Run the migration file:
+    - rails will only run gigration that it hasn't ran yet
+    - rails db:migrate
+
+Rollback the migration file:
+    - Undo last migration
+    - rails db:rollback
+    - preferred way is not to use rollback, but make a new migration file to reflect any modification in the database
