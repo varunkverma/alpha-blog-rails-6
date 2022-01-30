@@ -9,3 +9,39 @@ Rollback the migration file:
     - Undo last migration
     - rails db:rollback
     - preferred way is not to use rollback, but make a new migration file to reflect any modification in the database
+
+Start rails console
+    - rails console or rails c
+    - This console can be used to interact with the Model classes and more
+    - List all entries of a table:
+        - Article.all
+    - Three ways to create records:
+        1. using create method:
+            > Article.create(title: "first article", description: "lorem ipsum")
+        2. creating a new Article object and using setters to fill the value and then saving it:
+            > article = Article.new
+            => #<Article id: nil, title: nil, description: nil, created_at: nil, updated_at: nil> 
+            > article.title = "second article"
+            => "second article" 
+            > article.description = "lalalal alalal"
+            => "lalalal alalal" 
+            > article
+            => #<Article id: nil, title: "second article", description: "lalalal alalal", created_at: nil, updated_at: nil> 
+            > article.save
+        3. Passing values in new function and using save:
+            > article = Article.new(title: "Third article", description: "yeh yeh thrid one")
+            => #<Article id: nil, title: "Third article", description: "yeh yeh thrid one", created_at: nil, updated_at: nil> 
+            > article.save
+    - Read a record :
+        1. Using the class name and the find method to get record with specific id:
+            > Article.find(2)
+        2. Read the first article
+            > Article.first
+        3. Read the last article
+            > Article.last
+    - Update the record
+        1. Store the record in a variable using find and then use its setter mehtods to update required information and then save it.
+    - Delete the record
+        1. Get the record and store it in a variable and then use the destroy method. There's no need to save, destroy also reflects in the database as well
+
+Model classes can be used to add validations
