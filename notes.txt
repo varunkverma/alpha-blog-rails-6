@@ -45,3 +45,6 @@ Start rails console
         1. Get the record and store it in a variable and then use the destroy method. There's no need to save, destroy also reflects in the database as well
 
 Model classes can be used to add validations
+
+While defining routes, if "resources :articles" is used it will create all the route verbs for this resourse
+If we use only: [<verbs...>], then only these routes will be defined
