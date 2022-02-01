@@ -1,4 +1,5 @@
 <h2>Edit an article</h2>
+<p><%= link_to 'Back to all articles', articles_path(), method: :get%></p>
 
 <% if @article.errors.any? %>
     <h3>The following error prevented the article from being updated</h3>
